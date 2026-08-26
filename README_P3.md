@@ -11,23 +11,20 @@
 
 - Continous Integration
     - Docker Hub hosts application with 2 tagged versions
-    - Public Repository with one of member's login
 
     - K3D:
         - Read more about Kubernetes namespaces (namespaces for  development workflow)
         - Namespace Dedicated for "Argo CD" named "Argo CD"
         - Namespace "dev", contains application which will be automatically deployed by Argo CD using online Github Repository
-        - Public Repository should contain necessary config files, the login of a member of group must appear in repository's name
+        - Public repository (ArgonautApp) holds the config files Argo CD syncs from
 
     - Application:
-        - Use pre-made application: https://hub.docker.com/r/wil42/playground or create your own with tags *v1* and *v2* 
-        - if you create your own push it to docker hub, and it should have some differences
+        - App image: https://hub.docker.com/r/wil42/playground with tags *v1* and *v2*
 
 - Expected:
     - Change version from public Github repo, then see changes applied correctly
     - Argo CD Dashboard
     - Argo CD shows that application is sync with github after push
-    - check screenshots in pdf
 
 ```console
 $ k get ns
